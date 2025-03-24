@@ -2,7 +2,7 @@ from twisted.internet import reactor
 from twisted.internet.protocol import Factory
 from twisted.python import log
 from proxy.merger import ProxyMerger
-from proxy.proxydatabase import LdapProxyDatabase
+from proxy.proxydatabase import ProxyDatabase
 import sys
 
 if __name__ == '__main__':
@@ -13,12 +13,12 @@ if __name__ == '__main__':
         PROXY_PORT = 10636
 
     # create the database
-    db = LdapProxyDatabase("127.0.0.1", 27017)
+    db = ProxyDatabase("127.0.0.1", 27017)
     # configs = [
     #     ServerEntry(ip="192.168.1.2", port=389, bind_dn="", bind_password="dc", base_dn=""),
     #     ServerEntry(ip="192.168.1.189", port=389, bind_dn="", bind_password="dc-temp", base_dn="")
     # ]
-    build = lambda _: ProxyMerger(db)
+    build = lambda: ProxyMerger(db)
 
     # start logging service
     log.startLogging(sys.stdout)
