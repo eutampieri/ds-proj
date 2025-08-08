@@ -1,0 +1,21 @@
+{
+  "name": "@ldap-proxy-config/backend",
+  "version": "0.0.0",
+  "main": "app.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@ldap-proxy-config/models": "^1.0.0",
+    "@node-rs/argon2": "^2.0.2",
+    "express": "^4.21.2",
+    "jose": "^5.9.6",
+    "mongoose": "^8.1.1",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@types/morgan": "^1.9.10"
+  }
+}

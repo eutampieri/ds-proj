@@ -6,6 +6,11 @@
   "scripts": {
     "schema": "json2ts --declareExternallyReferenced=false --cwd=../../schemas -i ../../schemas -o src/generated"
   },
+  "exports": {
+    "./src/": "./src/"
+  },
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
   "dependencies": {},
   "devDependencies": {
     "json-schema-to-typescript": "^15.0.4"
